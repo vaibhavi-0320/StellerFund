@@ -5,9 +5,13 @@ This project allows users to connect their Freighter wallet and send XLM on the 
 ✨ Features
 
 🔗 Connect to Freighter wallet
+
 💰 Display wallet address & balance
+
 📤 Send XLM transactions
+
 ✅ Transaction confirmation
+
 🔍 View transaction on Stellar Expert
 
 🛠 Tech Stack
@@ -20,20 +24,29 @@ This project allows users to connect their Freighter wallet and send XLM on the 
 | Stellar Testnet | Blockchain network   |
 
 📦 Installation
+
 npm install
 npm run dev
 
+
 App runs at:
+
 http://localhost:3000
 
 ⚙️ How to Use
 
 Install the Freighter browser extension
+
 Switch network to Testnet
+
 Fund your wallet using Friendbot
+
 Click Connect Wallet
+
 Enter destination address & amount
+
 Approve the transaction in Freighter
+
 After confirmation, you can view the transaction on Stellar Expert
 
 📁 Project Structure
@@ -70,22 +83,33 @@ Stellar Expert Verification
 <img width="1920" height="902" alt="Screenshot 2026-02-20 001937" src="https://github.com/user-attachments/assets/34118691-632f-4309-8a60-1834f3c61921" />
 
 📌 Requirements
+
 Node.js 16+
+
 Freighter Wallet Extension
+
 Stellar Testnet Account
 
 🎯 White Belt Scope
+
 This project demonstrates:
+
 Wallet integration
+
 Transaction construction
+
 Transaction signing
+
 Testnet interaction
+
 Blockchain verification
+
 
 Built as part of the Stellar Journey to Mastery — Level 1 (White Belt)
 
 🧠 Notes
-
 Only supports Stellar Testnet.
+
 No private keys are stored.
+
 All transactions require Freighter approval.
