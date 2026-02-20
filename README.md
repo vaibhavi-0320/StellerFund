@@ -1,7 +1,7 @@
 StellarFund 🚀
 A minimal Stellar testnet wallet built with React and Freighter.
 This project allows users to connect their Freighter wallet and send XLM on the Stellar testnet.
-
+-------
 ✨ Features
 
 🔗 Connect to Freighter wallet
