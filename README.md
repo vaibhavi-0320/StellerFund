@@ -1,4 +1,5 @@
 StellarFund 🚀
+
 A minimal Stellar testnet wallet built with React and Freighter.
 This project allows users to connect their Freighter wallet and send XLM on the Stellar testnet.
 -------
@@ -11,7 +12,7 @@ This project allows users to connect their Freighter wallet and send XLM on the 
 📤 Send XLM transactions
 
 ✅ Transaction confirmation
-
+-----
 🔍 View transaction on Stellar Expert
 
 🛠 Tech Stack
@@ -22,17 +23,17 @@ This project allows users to connect their Freighter wallet and send XLM on the 
 | Freighter       | Wallet integration   |
 | Stellar SDK     | Transaction building |
 | Stellar Testnet | Blockchain network   |
-
+----
 📦 Installation
 
 npm install
 npm run dev
-
+---
 
 App runs at:
 
 http://localhost:3000
-
+---
 ⚙️ How to Use
 
 Install the Freighter browser extension
@@ -48,7 +49,7 @@ Enter destination address & amount
 Approve the transaction in Freighter
 
 After confirmation, you can view the transaction on Stellar Expert
-
+----
 📁 Project Structure
 src/
   components/
@@ -64,24 +65,24 @@ index.html
 vite.config.js
 package.json
 README.md
-
+----
 📸 Demo
 Wallet Connected
 
 <img width="1920" height="961" alt="Screenshot 2026-02-20 001829" src="https://github.com/user-attachments/assets/069d4141-405a-4d5f-9e57-7e1b20ad2059" />
-
+----
 Transaction Confirmation (Freighter)
 
 <img width="1920" height="954" alt="Screenshot 2026-02-20 001921" src="https://github.com/user-attachments/assets/b40b0597-edce-499f-96f8-fbdae2d7cd5a" />
-
+---
 Successful Transaction
 
 <img width="1920" height="954" alt="Screenshot 2026-02-20 001921" src="https://github.com/user-attachments/assets/8812c1b3-3264-4531-b098-99463bbc12a9" />
-
+---
 Stellar Expert Verification
 
 <img width="1920" height="902" alt="Screenshot 2026-02-20 001937" src="https://github.com/user-attachments/assets/34118691-632f-4309-8a60-1834f3c61921" />
-
+---
 📌 Requirements
 
 Node.js 16+
@@ -89,7 +90,7 @@ Node.js 16+
 Freighter Wallet Extension
 
 Stellar Testnet Account
-
+----
 🎯 White Belt Scope
 
 This project demonstrates:
@@ -106,7 +107,7 @@ Blockchain verification
 
 
 Built as part of the Stellar Journey to Mastery — Level 1 (White Belt)
-
+-----
 🧠 Future Improvements (Yellow → Green → Blue)
 
 Multiple fund creation support
@@ -126,6 +127,7 @@ Escrow logic
 UI improvements
 
 Mainnet readiness
+----
 📚 Learn More
 
 Stellar Documentation: https://developers.stellar.org
@@ -133,6 +135,7 @@ Stellar Documentation: https://developers.stellar.org
 Soroban Smart Contracts: https://soroban.stellar.org
 
 Freighter Wallet: https://www.freighter.app
+----
 
 🔐 Security Notes
 
