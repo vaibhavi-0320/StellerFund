@@ -107,9 +107,37 @@ Blockchain verification
 
 Built as part of the Stellar Journey to Mastery — Level 1 (White Belt)
 
-🧠 Notes
-Only supports Stellar Testnet.
+🧠 Future Improvements (Yellow → Green → Blue)
 
-No private keys are stored.
+Multiple fund creation support
 
-All transactions require Freighter approval.
+Structured Fund data model
+
+Role-based authorization
+
+Milestone-based withdrawals
+
+Unit testing (test.rs)
+
+Edge case handling
+
+Escrow logic
+
+UI improvements
+
+Mainnet readiness
+📚 Learn More
+
+Stellar Documentation: https://developers.stellar.org
+
+Soroban Smart Contracts: https://soroban.stellar.org
+
+Freighter Wallet: https://www.freighter.app
+
+🔐 Security Notes
+
+No private keys are stored
+
+All transactions require wallet approval
+
+Authorization is enforced in smart contract logic
