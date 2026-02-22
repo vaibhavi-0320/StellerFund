@@ -137,10 +137,10 @@ Stellar Documentation: https://developers.stellar.org
 Soroban Smart Contracts: https://soroban.stellar.org
 
 Freighter Wallet: https://www.freighter.app
-----
+##
 
 🔐 Security Notes
-
+--
 No private keys are stored
 
 All transactions require wallet approval
