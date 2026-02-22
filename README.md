@@ -84,7 +84,9 @@ Successful Transaction
 Stellar Expert Verification
 
 <img width="1920" height="902" alt="Screenshot 2026-02-20 001937" src="https://github.com/user-attachments/assets/34118691-632f-4309-8a60-1834f3c61921" />
+
 ##
+
 📌 Requirements
 --
 Node.js 16+
