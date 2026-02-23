@@ -67,25 +67,6 @@ vite.config.js
 package.json
 README.md
 ##
-📸 Demo
---
-Wallet Connected
-
-<img width="1920" height="961" alt="Screenshot 2026-02-20 001829" src="https://github.com/user-attachments/assets/069d4141-405a-4d5f-9e57-7e1b20ad2059" />
-
-Transaction Confirmation (Freighter)
-
-<img width="1920" height="954" alt="Screenshot 2026-02-20 001921" src="https://github.com/user-attachments/assets/b40b0597-edce-499f-96f8-fbdae2d7cd5a" />
-
-Successful Transaction
-
-<img width="1920" height="954" alt="Screenshot 2026-02-20 001921" src="https://github.com/user-attachments/assets/8812c1b3-3264-4531-b098-99463bbc12a9" />
-
-Stellar Expert Verification
-
-<img width="1920" height="902" alt="Screenshot 2026-02-20 001937" src="https://github.com/user-attachments/assets/34118691-632f-4309-8a60-1834f3c61921" />
-
-##
 
 📌 Requirements
 --
