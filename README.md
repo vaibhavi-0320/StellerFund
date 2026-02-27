@@ -1,202 +1,370 @@
-# 💸 StellarFund
+<div align="center">
 
-[![Network](https://img.shields.io/badge/Network-Stellar_Testnet-blue)]
-[![Smart Contract](https://img.shields.io/badge/Smart_Contract-Soroban-orange)]
-[![Wallet](https://img.shields.io/badge/Wallet-Freighter-purple)]
-[![Frontend](https://img.shields.io/badge/Frontend-React_+_Vite-61dafb)]
-[![Status](https://img.shields.io/badge/Builder_Track-Yellow_Belt-gold)]
+# 🚀 StellarFund
 
-> A decentralized escrow application powered by Soroban Smart Contracts on Stellar Testnet.
+### Decentralized Freelance Escrow Platform on Stellar
+
+[![Stellar](https://img.shields.io/badge/Stellar-Network-7D00FF?style=for-the-badge&logo=stellar&logoColor=white)](https://stellar.org)
+[![Soroban](https://img.shields.io/badge/Soroban-Smart_Contract-00D1FF?style=for-the-badge)](https://soroban.stellar.org)
+[![React](https://img.shields.io/badge/React-18.2.0-61DAFB?style=for-the-badge&logo=react&logoColor=black)](https://react.dev)
+[![Rust](https://img.shields.io/badge/Rust-Contract-CE422B?style=for-the-badge&logo=rust&logoColor=white)](https://www.rust-lang.org)
+
+**[Live Demo](https://stellarfund.vercel.app)** • **[Contract Explorer](https://stellar.expert/explorer/testnet/contract/CCKR26GKAMQQOQAXYU6SLDAYFQ4V73NSDTXSD2BCQXP6EEMAA7URNJAS)** • **[Documentation](#-documentation)**
+
+</div>
+
 
 ---
 
-## 🚀 Overview
+## 🌟 Overview
 
-StellarFund is a Soroban-powered escrow dApp that enables secure peer-to-peer payments on Stellar.
+**StellarFund** is a production-grade decentralized escrow platform built on the Stellar blockchain, utilizing Soroban smart contracts to provide trustless, transparent, and secure payment infrastructure for freelance work.
 
-It allows:
-- Creating escrow contracts
-- Locking funds on-chain
-- Releasing payments to freelancers
-- Refunding payments securely
-- Verifying transactions via Stellar Expert
+### Why StellarFund?
 
-All transactions are signed using Freighter wallet and executed on Stellar Testnet.
-
----
-
-## 🔐 Smart Contract
-
-**Contract ID:**
-
-
-CONTRACT_ID_HERE
-
-
-🔎 **Explorer:**  
-https://stellar.expert/explorer/testnet/contract/CONTRACT_ID_HERE
+- 🔒 **Trustless Escrow** - No intermediaries
+- ⚡ **Instant Settlement** - 3-5 second finality
+- 💰 **Low Fees** - Fractions of a cent
+- 🌐 **Global Access** - Anyone, anywhere
+- 🔍 **Full Transparency** - On-chain verification
 
 ---
 
-## 🔎 Verified Transaction
+## 🥋 Stellar Journey to Mastery
 
-Example transaction:
+<div align="center">
 
+| Badge | Level | Status | Key Features |
+|:---:|:---|:---:|:---|
+| ⚪ | White Belt | ✅ Complete | Wallet integration, XLM transactions |
+| 🟡 | Yellow Belt | ✅ Complete | Smart contracts, error handling, frontend calls |
+| 🟠 | Orange Belt | 🔄 In Progress | Multi-sig, events, advanced patterns |
 
-TX_HASH_HERE
+</div>
 
+### ⚪ White Belt Requirements
 
-View on Stellar Expert:
+```
+✅ Connect Freighter wallet
+✅ Display XLM balance
+✅ Send XLM payments
+✅ Transaction confirmation
+✅ Error handling
+```
 
-https://stellar.expert/explorer/testnet/tx/TX_HASH_HERE
+### 🟡 Yellow Belt Requirements
 
----
+```
+✅ Deploy Soroban contract on testnet
+✅ 3+ error types handled
+✅ Frontend calls contract
+✅ Transaction status visible
+✅ Professional structure
+✅ 2+ meaningful commits
+```
 
-## 🧱 Belt Progression
-
-| Level | Status | What Was Built |
-|--------|--------|----------------|
-| ⚪ White Belt | ✅ Completed | Wallet integration + XLM transfer |
-| 🟡 Yellow Belt | ✅ Completed | Deployed Soroban escrow contract + frontend integration |
-| 🟠 Orange Belt | ⏳ In Progress | (Planned: advanced escrow logic, testing, contract optimization) |
+**Contract Address:** `CCKR26GKAMQQOQAXYU6SLDAYFQ4V73NSDTXSD2BCQXP6EEMAA7URNJAS`  
+**[View on Stellar Expert →](https://stellar.expert/explorer/testnet/contract/CCKR26GKAMQQOQAXYU6SLDAYFQ4V73NSDTXSD2BCQXP6EEMAA7URNJAS)**
 
 ---
 
 ## ✨ Features
 
-### Wallet Integration
-Freighter wallet connection with network validation.
+<table>
+<tr>
+<td width="50%">
 
-### Escrow Creation
-Create escrow entries that store:
-- Client address
-- Freelancer address
-- Amount
-- Status
+### 🔐 Security
+- Soroban smart contracts
+- Authorization checks
+- Status management
+- Error handling
 
-### On-Chain Enforcement
-Release and refund logic enforced directly in the smart contract.
+</td>
+<td width="50%">
 
-### Transaction Verification
-After each transaction:
-- Transaction hash is displayed
-- Direct link to Stellar Expert provided
+### 💼 User Experience
+- Wallet integration
+- Real-time balance
+- Transaction preview
+- Stellar Expert links
 
-### Error Handling
-- Wallet rejection handled
-- Invalid address detection
-- Network mismatch warnings
-
----
-
-## 📦 Project Structure
-
-
-.
-├── contracts/
-│ └── stellar_fund/
-│ ├── src/lib.rs
-│ └── Cargo.toml
-├── src/
-│ ├── components/
-│ ├── App.jsx
-│ └── main.jsx
-├── package.json
-└── README.md
-
+</td>
+</tr>
+</table>
 
 ---
 
-## 🛠 Prerequisites
+## 🛠️ Tech Stack
 
-- Node.js 18+
-- Rust
-- Soroban CLI
-- Freighter Wallet
-- Stellar Testnet Account funded
+<div align="center">
+
+### Smart Contract
+
+![Rust](https://img.shields.io/badge/Rust-1.70+-CE422B?style=flat-square&logo=rust&logoColor=white)
+![Soroban](https://img.shields.io/badge/Soroban_SDK-21.0.0-00D1FF?style=flat-square)
+![WASM](https://img.shields.io/badge/WebAssembly-654FF0?style=flat-square&logo=webassembly&logoColor=white)
+
+### Frontend
+
+![React](https://img.shields.io/badge/React-18.2.0-61DAFB?style=flat-square&logo=react)
+![Vite](https://img.shields.io/badge/Vite-5.0-646CFF?style=flat-square&logo=vite)
+![Tailwind](https://img.shields.io/badge/Tailwind-3.3-06B6D4?style=flat-square&logo=tailwindcss)
+
+### Blockchain
+
+![Stellar](https://img.shields.io/badge/Stellar-Testnet-7D00FF?style=flat-square&logo=stellar)
+![Freighter](https://img.shields.io/badge/Freighter-Wallet-FF6B6B?style=flat-square)
+![SDK](https://img.shields.io/badge/Stellar_SDK-11.3.0-00D1FF?style=flat-square)
+
+</div>
 
 ---
 
-## 🖥 Run Locally
+## 🚀 Quick Start
 
-### Install dependencies
+### Prerequisites
 
 ```bash
+✅ Rust & Cargo (1.70+)
+✅ Node.js & npm (18+)
+✅ Stellar CLI
+✅ Freighter Wallet
+```
+
+### Installation
+
+```bash
+# 1. Clone repository
+git clone https://github.com/YOUR_USERNAME/StellarFund.git
+cd StellarFund
+
+# 2. Add WASM target
+rustup target add wasm32-unknown-unknown
+
+# 3. Create testnet account
+stellar keys generate my-account --network testnet
+stellar keys fund my-account --network testnet
+
+# 4. Build & deploy contract
+stellar contract build
+stellar contract deploy \
+  --wasm target/wasm32-unknown-unknown/release/stellar_fund_contract.wasm \
+  --source my-account \
+  --network testnet
+
+# 5. Update CONTRACT_ID in src/lib/freighter.js
+
+# 6. Install & run
 npm install
-Start frontend
 npm run dev
-Build contract
-soroban build
-Deploy contract
-soroban contract deploy \
---wasm target/wasm32-unknown-unknown/release/stellar_fund.wasm \
---network testnet
-🌍 Live Demo
+```
 
-Frontend deployed on Vercel:
-
-🔗 https://YOUR_VERCEL_LINK.vercel.app
-
-🧪 Running Tests
-soroban test
-
-(If applicable — optional for Yellow Belt)
-
-🎯 Yellow Belt Requirements Covered
-
-✔ Smart contract deployed on testnet
-
-✔ Contract invoked from frontend
-
-✔ Wallet integration (Freighter)
-
-✔ Transaction hash displayed
-
-✔ Verifiable Stellar Expert link
-
-✔ Multiple meaningful commits
-
-✔ Public GitHub repository
-
-✔ Live frontend deployment
-
-🙏 Acknowledgements
-
-Stellar Development Foundation
-
-Soroban Smart Contract Platform
-
-Freighter Wallet
-
-Stellar Journey to Mastery Program
-
-⚪🟡 Built for Stellar Journey to Mastery · 2026
+**Open http://localhost:3001** 🎉
 
 ---
 
-# 🧠 Why This Is Better
+## 📁 Project Structure
 
-This version:
-
-• Has badges (clean + professional)  
-• Has explorer link  
-• Has transaction proof  
-• Has belt progression  
-• Has prerequisites  
-• Has run instructions  
-• Is not bloated  
-• Looks senior-level  
-
-Your friend’s README = detailed  
-Yours = sharp and intentional  
-
-That’s better.
+```
+stellarfund/
+├── contracts/stellar_fund/
+│   └── src/
+│       ├── lib.rs              # Contract logic
+│       └── test.rs             # Unit tests
+├── src/
+│   ├── components/
+│   │   └── Header.jsx          # Navigation
+│   ├── lib/
+│   │   └── freighter.js        # Wallet integration
+│   ├── App.jsx                 # Main app
+│   └── main.jsx                # Entry point
+└── public/
+    └── index.html
+```
 
 ---
 
-# 🎨 About the Colored Belt Dots at Bottom
+## 📜 Smart Contract
 
-You can keep this line:
+### Functions
 
+#### 1. Create Escrow
 
-⚪🟡 Built for Stellar Journey to Mastery · 2026
+```rust
+pub fn create_escrow(
+    env: Env,
+    client: Address,
+    freelancer: Address,
+    amount: i128,
+) -> Result<u64, Error>
+```
+
+Lock funds for freelance work. Returns escrow ID.
+
+**CLI:**
+```bash
+stellar contract invoke \
+  --id CONTRACT_ID \
+  --source my-account \
+  --network testnet \
+  -- \
+  create_escrow \
+  --client GA... \
+  --freelancer GB... \
+  --amount 10000000
+```
+
+#### 2. Release Payment
+
+```rust
+pub fn release_payment(
+    env: Env,
+    client: Address,
+    id: u64,
+) -> Result<(), Error>
+```
+
+Release funds to freelancer. Only client can call.
+
+#### 3. Refund
+
+```rust
+pub fn refund(
+    env: Env,
+    client: Address,
+    id: u64,
+) -> Result<(), Error>
+```
+
+Cancel and refund client.
+
+#### 4. Get Escrow
+
+```rust
+pub fn get_escrow(
+    env: Env,
+    id: u64,
+) -> Result<Escrow, Error>
+```
+
+View escrow details (public).
+
+### Error Types
+
+```rust
+pub enum Error {
+    EscrowNotFound = 1,     // Invalid ID
+    NotAuthorized = 2,      // Wrong caller
+    AlreadyCompleted = 3,   // Already processed
+    InvalidAmount = 4,      // Amount ≤ 0
+}
+```
+
+---
+
+## 🌐 Frontend Integration
+
+### Wallet Connection
+
+```javascript
+import { isConnected, getPublicKey } from '@stellar/freighter-api';
+
+export async function connectWallet() {
+  const connected = await isConnected();
+  if (!connected) throw new Error('Install Freighter');
+  return await getPublicKey();
+}
+```
+
+### Contract Call Example
+
+```javascript
+const contract = new StellarSdk.Contract(CONTRACT_ID);
+
+const tx = new StellarSdk.TransactionBuilder(account, {
+  fee: StellarSdk.BASE_FEE,
+  networkPassphrase: StellarSdk.Networks.TESTNET
+})
+.addOperation(
+  contract.call('create_escrow', 
+    StellarSdk.Address.fromString(client).toScVal(),
+    StellarSdk.Address.fromString(freelancer).toScVal(),
+    StellarSdk.nativeToScVal(amount, { type: 'i128' })
+  )
+)
+.setTimeout(30)
+.build();
+```
+
+---
+
+## 🚢 Deployment
+
+### Contract Deployment
+
+```bash
+# Build
+stellar contract build
+
+# Deploy
+stellar contract deploy \
+  --wasm target/wasm32-unknown-unknown/release/stellar_fund_contract.wasm \
+  --source my-account \
+  --network testnet
+
+# Verify
+https://stellar.expert/explorer/testnet/contract/YOUR_CONTRACT_ID
+```
+
+### Frontend Deployment
+
+```bash
+npm run build
+# Deploy dist/ to Vercel/Netlify
+```
+
+---
+
+## 🧪 Testing
+
+```bash
+# Run tests
+cargo test
+
+# With output
+cargo test -- --nocapture
+```
+
+### Test Coverage
+
+```
+✅ test_create_escrow
+✅ test_release_payment
+✅ test_refund
+✅ test_invalid_amount
+✅ test_unauthorized
+✅ test_double_completion
+```
+
+---
+
+## 📚 Documentation
+
+- **[Stellar Docs](https://developers.stellar.org)**
+- **[Soroban Docs](https://soroban.stellar.org/docs)**
+- **[Freighter Wallet](https://docs.freighter.app)**
+- **[Stellar Expert](https://stellar.expert)**
+
+---
+
+<div align="center">
+
+### 🌟 Built with ❤️ on Stellar
+
+[![Stellar](https://img.shields.io/badge/Stellar-Network-7D00FF?style=for-the-badge&logo=stellar&logoColor=white)](https://stellar.org)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=for-the-badge)](https://opensource.org/licenses/MIT)
+
+**[⬆ Back to Top](#-stellarfund)**
+
+</div>
