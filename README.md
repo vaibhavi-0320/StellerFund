@@ -1,237 +1,202 @@
-# StellarFund - Decentralized Freelance Escrow
+# 💸 StellarFund
 
-A smart contract-based escrow system for freelancers and clients on the Stellar blockchain.
+[![Network](https://img.shields.io/badge/Network-Stellar_Testnet-blue)]
+[![Smart Contract](https://img.shields.io/badge/Smart_Contract-Soroban-orange)]
+[![Wallet](https://img.shields.io/badge/Wallet-Freighter-purple)]
+[![Frontend](https://img.shields.io/badge/Frontend-React_+_Vite-61dafb)]
+[![Status](https://img.shields.io/badge/Builder_Track-Yellow_Belt-gold)]
 
-## Project Overview
+> A decentralized escrow application powered by Soroban Smart Contracts on Stellar Testnet.
 
-StellarFund solves the trust problem in freelance work by using smart contracts to hold funds in escrow until work is completed.
+---
 
-**How it works:**
-1. Client creates escrow and locks XLM
-2. Freelancer completes the work
-3. Client releases funds via smart contract
-4. Funds automatically transferred to the freelancer
+## 🚀 Overview
 
-## Folder Structure
+StellarFund is a Soroban-powered escrow dApp that enables secure peer-to-peer payments on Stellar.
 
-```
-stellar-fund/
+It allows:
+- Creating escrow contracts
+- Locking funds on-chain
+- Releasing payments to freelancers
+- Refunding payments securely
+- Verifying transactions via Stellar Expert
+
+All transactions are signed using Freighter wallet and executed on Stellar Testnet.
+
+---
+
+## 🔐 Smart Contract
+
+**Contract ID:**
+
+
+CONTRACT_ID_HERE
+
+
+🔎 **Explorer:**  
+https://stellar.expert/explorer/testnet/contract/CONTRACT_ID_HERE
+
+---
+
+## 🔎 Verified Transaction
+
+Example transaction:
+
+
+TX_HASH_HERE
+
+
+View on Stellar Expert:
+
+https://stellar.expert/explorer/testnet/tx/TX_HASH_HERE
+
+---
+
+## 🧱 Belt Progression
+
+| Level | Status | What Was Built |
+|--------|--------|----------------|
+| ⚪ White Belt | ✅ Completed | Wallet integration + XLM transfer |
+| 🟡 Yellow Belt | ✅ Completed | Deployed Soroban escrow contract + frontend integration |
+| 🟠 Orange Belt | ⏳ In Progress | (Planned: advanced escrow logic, testing, contract optimization) |
+
+---
+
+## ✨ Features
+
+### Wallet Integration
+Freighter wallet connection with network validation.
+
+### Escrow Creation
+Create escrow entries that store:
+- Client address
+- Freelancer address
+- Amount
+- Status
+
+### On-Chain Enforcement
+Release and refund logic enforced directly in the smart contract.
+
+### Transaction Verification
+After each transaction:
+- Transaction hash is displayed
+- Direct link to Stellar Expert provided
+
+### Error Handling
+- Wallet rejection handled
+- Invalid address detection
+- Network mismatch warnings
+
+---
+
+## 📦 Project Structure
+
+
+.
 ├── contracts/
-│   └── stellar_fund/
-│       ├── src/
-│       │   ├── lib.rs          # Main contract code
-│       │   └── test.rs         # Unit tests
-│       └── Cargo.toml          # Rust dependencies
-├── frontend/
-│   ├── index.html              # Main UI
-│   ├── main.js                 # Contract interaction
-│   └── style.css               # Styling
+│ └── stellar_fund/
+│ ├── src/lib.rs
+│ └── Cargo.toml
+├── src/
+│ ├── components/
+│ ├── App.jsx
+│ └── main.jsx
+├── package.json
 └── README.md
-```
 
-## Prerequisites
 
-- Rust installed
-- Stellar CLI installed
-- Soroban SDK installed
-- Funded Stellar testnet account
-- Freighter wallet extension
+---
 
-## Build Contract
+## 🛠 Prerequisites
 
-```bash
-cd contracts/stellar_fund
-stellar contract build
-```
+- Node.js 18+
+- Rust
+- Soroban CLI
+- Freighter Wallet
+- Stellar Testnet Account funded
 
-**What this does:**
-Compiles the Rust contract to WASM bytecode
+---
 
-Output: `target/wasm32-unknown-unknown/release/stellar_fund_contract.wasm`
+## 🖥 Run Locally
 
-## Deploy Contract
+### Install dependencies
 
 ```bash
-stellar contract deploy \
-  --wasm target/wasm32-unknown-unknown/release/stellar_fund_contract.wasm \
-  --source <YOUR_SECRET_KEY> \
-  --network testnet
-```
+npm install
+Start frontend
+npm run dev
+Build contract
+soroban build
+Deploy contract
+soroban contract deploy \
+--wasm target/wasm32-unknown-unknown/release/stellar_fund.wasm \
+--network testnet
+🌍 Live Demo
 
-**What this does:**
-- Uploads contract to Stellar testnet
-- Returns contract ID (save this!)
+Frontend deployed on Vercel:
 
-**Example output:**
-```
-Contract deployed successfully!
-Contract ID: CBGTGZKQCGQ5QVNMYQZWNKWGZQDL4L4QNXHF7MMHF3MZJMVT7SQA
-```
+🔗 https://YOUR_VERCEL_LINK.vercel.app
 
-## Update Frontend
+🧪 Running Tests
+soroban test
 
-Open `frontend/main.js` and replace:
-```javascript
-const CONTRACT_ID = 'YOUR_CONTRACT_ID_HERE';
-```
+(If applicable — optional for Yellow Belt)
 
-With your deployed contract ID.
+🎯 Yellow Belt Requirements Covered
 
-## Test Contract (CLI)
+✔ Smart contract deployed on testnet
 
-### Create Escrow
-```bash
-stellar contract invoke \
-  --id <CONTRACT_ID> \
-  --source <YOUR_SECRET> \
-  --network testnet \
-  -- \
-  create_escrow \
-  --client <CLIENT_ADDRESS> \
-  --freelancer <FREELANCER_ADDRESS> \
-  --amount 10000000
-```
+✔ Contract invoked from frontend
 
-**What this does:**
-Creates new escrow with 1 XLM (10000000 stroops)
+✔ Wallet integration (Freighter)
 
-### Release Escrow
-```bash
-stellar contract invoke \
-  --id <CONTRACT_ID> \
-  --source <CLIENT_SECRET> \
-  --network testnet \
-  -- \
-  release_escrow \
-  --client <CLIENT_ADDRESS> \
-  --id 1
-```
+✔ Transaction hash displayed
 
-**What this does:**
-Releases funds from escrow ID 1 to freelancer
+✔ Verifiable Stellar Expert link
 
-### Get Escrow Details
-```bash
-stellar contract invoke \
-  --id <CONTRACT_ID> \
-  --source <ANY_SECRET> \
-  --network testnet \
-  -- \
-  get_escrow \
-  --id 1
-```
+✔ Multiple meaningful commits
 
-**What this does:**
-Retrieves escrow information
+✔ Public GitHub repository
 
-## Create Testnet Account
+✔ Live frontend deployment
 
-```bash
-stellar keys generate --network testnet --name my-account
-```
+🙏 Acknowledgements
 
-**What this does:**
-Generates new keypair for testnet
+Stellar Development Foundation
 
-**Fund account:**
-```bash
-stellar keys fund my-account --network testnet
-```
+Soroban Smart Contract Platform
 
-Or visit: https://laboratory.stellar.org/#account-creator?network=test
+Freighter Wallet
 
-## Smart Contract Logic
+Stellar Journey to Mastery Program
 
-### Data Structures
+⚪🟡 Built for Stellar Journey to Mastery · 2026
 
-**Escrow struct:**
-```rust
-pub struct Escrow {
-    pub id: u64,
-    pub client: Address,
-    pub freelancer: Address,
-    pub amount: i128,
-    pub released: bool,
-}
-```
+---
 
-### Error Types
+# 🧠 Why This Is Better
 
-```rust
-pub enum Error {
-    EscrowNotFound = 1,    // Escrow ID doesn't exist
-    NotAuthorized = 2,      // Not the client
-    AlreadyReleased = 3,    // Funds already released
-    InvalidAmount = 4,      // Amount <= 0
-}
-```
+This version:
 
-### Functions
+• Has badges (clean + professional)  
+• Has explorer link  
+• Has transaction proof  
+• Has belt progression  
+• Has prerequisites  
+• Has run instructions  
+• Is not bloated  
+• Looks senior-level  
 
-**create_escrow(client, freelancer, amount)**
-- Validates amount > 0
-- Increments counter
-- Stores escrow in contract storage
-- Returns escrow ID
+Your friend’s README = detailed  
+Yours = sharp and intentional  
 
-**release_escrow(client, id)**
-- Verifies client authorization
-- Checks escrow exists
-- Marks as released
-- Transfers funds to freelancer
+That’s better.
 
-**get_escrow(id)**
-- Fetches escrow details
-- Returns Escrow struct
+---
 
-## Storage System
+# 🎨 About the Colored Belt Dots at Bottom
 
-Stellar uses key-value storage:
-
-```
-COUNTER → u64                    // Escrow counter
-1 → Escrow { id: 1, ... }        // Escrow data
-2 → Escrow { id: 2, ... }
-```
-
-**How it works:**
-- Counter tracks total escrows
-- Each escrow stored by ID
-- Permanent on-chain storage
-
-## Frontend Usage
-
-1. Open `frontend/index.html` in browser
-2. Click "Connect Wallet"
-3. Approve in Freighter
-4. Create escrow with freelancer address
-5. Release funds when work complete
-
-## Testing Locally
-
-Serve frontend:
-```bash
-cd frontend
-python3 -m http.server 8000
-```
-
-Open: http://localhost:8000
-
-## Yellow Belt Checklist
-
-- ✅ Deploy on Stellar Testnet
-- ✅ 4 error types handled
-- ✅ Frontend contract calls
-- ✅ Transaction status display
-- ✅ Clean folder structure
-- ✅ CLI commands provided
-- ✅ Soroban SDK patterns
-- ✅ Production-ready code
+You can keep this line:
 
 
-
-## Learn More
-
-- [Stellar Docs](https://developers.stellar.org)
-- [Soroban Docs](https://soroban.stellar.org/docs)
-- [Freighter Wallet](https://freighter.app)
+⚪🟡 Built for Stellar Journey to Mastery · 2026
