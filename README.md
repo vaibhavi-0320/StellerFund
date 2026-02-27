@@ -1,6 +1,6 @@
 # StellarFund - Decentralized Freelance Escrow
 
-A smart contract-based escrow system for freelancers and clients on Stellar blockchain.
+A smart contract-based escrow system for freelancers and clients on the Stellar blockchain.
 
 ## Project Overview
 
@@ -10,7 +10,7 @@ StellarFund solves the trust problem in freelance work by using smart contracts 
 1. Client creates escrow and locks XLM
 2. Freelancer completes the work
 3. Client releases funds via smart contract
-4. Funds automatically transferred to freelancer
+4. Funds automatically transferred to the freelancer
 
 ## Folder Structure
 
