@@ -228,19 +228,7 @@ Open: http://localhost:8000
 - ✅ Soroban SDK patterns
 - ✅ Production-ready code
 
-## Common Issues
 
-**"Contract not found"**
-- Deploy contract first
-- Update CONTRACT_ID in main.js
-
-**"Not authorized"**
-- Only client can release escrow
-- Check you're using correct wallet
-
-**"Invalid amount"**
-- Amount must be > 0
-- Use stroops (1 XLM = 10000000 stroops)
 
 ## Learn More
 
