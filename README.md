@@ -9,7 +9,7 @@
 [![React](https://img.shields.io/badge/React-18.2.0-61DAFB?style=for-the-badge&logo=react&logoColor=black)](https://react.dev)
 [![Rust](https://img.shields.io/badge/Rust-Contract-CE422B?style=for-the-badge&logo=rust&logoColor=white)](https://www.rust-lang.org)
 
-**[Live Demo](https://stellarfund.vercel.app)** • **[Contract Explorer](https://stellar.expert/explorer/testnet/contract/CCKR26GKAMQQOQAXYU6SLDAYFQ4V73NSDTXSD2BCQXP6EEMAA7URNJAS)** • **[Documentation](#-documentation)**
+ • **[Contract Explorer](https://stellar.expert/explorer/testnet/contract/CCKR26GKAMQQOQAXYU6SLDAYFQ4V73NSDTXSD2BCQXP6EEMAA7URNJAS)** • 
 
 </div>
 
