@@ -170,15 +170,15 @@ npm run dev
 stellarfund/
 ├── contracts/stellar_fund/
 │   └── src/
-│       ├── lib.rs              # Contract logic
-│       └── test.rs             # Unit tests
+│       ├── lib.rs              
+│       └── test.rs             
 ├── src/
 │   ├── components/
-│   │   └── Header.jsx          # Navigation
+│   │   └── Header.jsx         
 │   ├── lib/
-│   │   └── freighter.js        # Wallet integration
-│   ├── App.jsx                 # Main app
-│   └── main.jsx                # Entry point
+│   │   └── freighter.js        
+│   ├── App.jsx                
+│   └── main.jsx
 └── public/
     └── index.html
 ```
@@ -363,7 +363,7 @@ cargo test -- --nocapture
 ### 🌟 Built with ❤️ on Stellar
 
 [![Stellar](https://img.shields.io/badge/Stellar-Network-7D00FF?style=for-the-badge&logo=stellar&logoColor=white)](https://stellar.org)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=for-the-badge)](https://opensource.org/licenses/MIT)
+
 
 **[⬆ Back to Top](#-stellarfund)**
 
