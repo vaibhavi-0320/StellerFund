@@ -19,8 +19,7 @@
 
 <br />
 
-**[🔴 Live Demo](https://stellarfund.vercel.app)** &nbsp;·&nbsp; **[📜 Contract on Stellar Expert](https://stellar.expert/explorer/testnet/contract/CCKR26GKAMQQOQAXYU6SLDAYFQ4V73NSDTXSD2BCQXP6EEMAA7URNJAS)** &nbsp;·&nbsp; **[⚙️ CI/CD Pipeline](https://github.com/YOUR_USERNAME/stellarfund/actions)**
-
+**[🔴 Live Demo Video](https://www.loom.com/share/d2e7203f65a243299b0634f6e6d558ec)** &nbsp;·&nbsp; **[📜 Contract on Stellar Expert](https://stellar.expert/explorer/testnet/contract/CCKR26GKAMQQOQAXYU6SLDAYFQ4V73NSDTXSD2BCQXP6EEMAA7URNJAS)** &nbsp;·&nbsp; 
 <br />
 
 </div>
