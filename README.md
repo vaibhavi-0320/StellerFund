@@ -19,7 +19,8 @@
 
 <br/>
 
-[🎬 Demo Video](https://www.loom.com/share/d2e7203f65a243299b0634f6e6d558ec) &nbsp;·&nbsp; [📜 Contract on Stellar Expert](https://stellar.expert/explorer/testnet/contract/CCKR26GKAMQQOQAXYU6SLDAYFQ4V73NSDTXSD2BCQXP6EEMAA7URNJAS) &nbsp;·&nbsp;
+[🎬 Demo Video](https://www.loom.com/share/d2e7203f65a243299b0634f6e6d558ec) &nbsp;·&nbsp; [📜 Contract on Stellar Expert](https://stellar.expert/explorer/testnet/contract/CCKR26GKAMQQOQAXYU6SLDAYFQ4V73NSDTXSD2BCQXP6EEMAA7URNJAS) &nbsp;·&nbsp; [⚙️ CI/CD Pipeline](https://github.com/YOUR_USERNAME/stellarfund/actions)
+
 <br/>
 
 </div>
@@ -110,7 +111,7 @@ Client creates escrow  →  XLM locked in smart contract
 
 ## 🎬 Demo Video
 
-> **Watch the 4-minute demo:** [loom.com/share/d2e7203f65a243299b0634f6e6d558ec](https://www.loom.com/share/d2e7203f65a243299b0634f6e6d558ec)
+> **Watch the 1-minute demo:** [loom.com/share/d2e7203f65a243299b0634f6e6d558ec](https://www.loom.com/share/d2e7203f65a243299b0634f6e6d558ec)
 
 The demo covers:
 1. Connecting Freighter wallet and checking XLM balance
