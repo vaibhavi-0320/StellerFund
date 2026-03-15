@@ -163,7 +163,7 @@ The demo covers:
 
 ### 🔴 Live Application
 
-> **Deployed on Vercel:** [stellarfund.vercel.app](https://stellarfund.vercel.app)
+> **Deployed on Vercel:** [stellarfund.vercel.app](https://steller-fund.vercel.app/)
 
 ---
 
