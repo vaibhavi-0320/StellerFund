@@ -1,0 +1,16 @@
+{
+  "name": "stellar-fund-vault",
+  "private": true,
+  "version": "1.0.0",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "dev": "npm --prefix apps/web run dev",
+    "build": "npm --prefix apps/web run build",
+    "lint": "npm --prefix apps/web run lint",
+    "test:web": "npm --prefix apps/web run test",
+    "test:contract": "cargo test",
+    "test": "npm run test:web && npm run test:contract"
+  }
+}
