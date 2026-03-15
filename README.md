@@ -8,7 +8,7 @@
 
 <br/>
 
-[![CI](https://github.com/YOUR_USERNAME/stellarfund/actions/workflows/ci.yml/badge.svg)](https://github.com/YOUR_USERNAME/stellarfund/actions/workflows/ci.yml)
+[![CI](https://github.com/vaibhavi-0320/stellarfund/actions/workflows/ci.yml/badge.svg)](https://github.com/vaibhavi-0320/stellarfund/actions/workflows/ci.yml)
 [![Stellar](https://img.shields.io/badge/Stellar-Testnet-7D00FF?style=flat-square&logo=stellar&logoColor=white)](https://stellar.org)
 [![Soroban](https://img.shields.io/badge/Soroban_SDK-21.7.7-00D1FF?style=flat-square)](https://soroban.stellar.org)
 [![React](https://img.shields.io/badge/React-19.0-61DAFB?style=flat-square&logo=react&logoColor=black)](https://react.dev)
