@@ -1,0 +1,20 @@
+<svg width="128" height="128" viewBox="0 0 128 128" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <circle cx="64" cy="64" r="58" fill="url(#bg)" />
+  <circle cx="64" cy="64" r="57" stroke="rgba(255,255,255,0.18)" stroke-width="2" />
+  <path
+    d="M64 24L96.909 43V81L64 100L31.091 81V43L64 24Z"
+    stroke="#F5F5F5"
+    stroke-width="7"
+    stroke-linejoin="round"
+  />
+  <path d="M55 79V51" stroke="#F5F5F5" stroke-width="7" stroke-linecap="round" />
+  <path d="M64 43V61" stroke="#F5F5F5" stroke-width="7" stroke-linecap="round" />
+  <path d="M73 79V51" stroke="#F5F5F5" stroke-width="7" stroke-linecap="round" />
+  <defs>
+    <radialGradient id="bg" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(42 34) rotate(51.34) scale(95.7)">
+      <stop stop-color="#2A2A31"/>
+      <stop offset="0.62" stop-color="#111217"/>
+      <stop offset="1" stop-color="#050608"/>
+    </radialGradient>
+  </defs>
+</svg>

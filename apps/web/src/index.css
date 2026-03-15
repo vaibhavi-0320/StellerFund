@@ -1,0 +1,90 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: 228 12% 5%;
+  --foreground: 40 10% 92%;
+  --primary: 38 55% 62%;
+  --primary-foreground: 228 12% 5%;
+  --secondary: 228 10% 10%;
+  --secondary-foreground: 40 10% 85%;
+  --muted: 228 8% 16%;
+  --muted-foreground: 228 8% 55%;
+  --accent: 38 45% 50%;
+  --accent-foreground: 228 12% 5%;
+  --border: 228 8% 18%;
+  --input: 228 10% 12%;
+  --ring: 38 55% 62%;
+  --card: 228 12% 8%;
+  --card-foreground: 40 10% 92%;
+  --popover: 228 12% 8%;
+  --popover-foreground: 40 10% 92%;
+  --destructive: 0 62% 50%;
+  --destructive-foreground: 0 0% 100%;
+  --success: 142 70% 45%;
+  --success-foreground: 0 0% 100%;
+  --radius: 0.75rem;
+  --sidebar-background: 228 12% 8%;
+  --sidebar-foreground: 40 10% 92%;
+  --sidebar-primary: 38 55% 62%;
+  --sidebar-primary-foreground: 228 12% 5%;
+  --sidebar-accent: 228 8% 16%;
+  --sidebar-accent-foreground: 40 10% 92%;
+  --sidebar-border: 228 8% 18%;
+  --sidebar-ring: 38 55% 62%;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+    box-sizing: border-box;
+  }
+  html {
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+  }
+  body {
+    @apply bg-background text-foreground;
+    margin: 0;
+    min-height: 100vh;
+    min-height: 100dvh;
+    font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+  }
+  #root {
+    min-height: 100vh;
+    min-height: 100dvh;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: hsl(var(--background));
+}
+::-webkit-scrollbar-thumb {
+  background: hsl(var(--muted));
+  border-radius: 3px;
+}
+
+/* Gold gradient text */
+.text-gradient-gold {
+  background: linear-gradient(135deg, hsl(38 55% 62%), hsl(38 75% 75%));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Glow effect */
+.glow-gold {
+  box-shadow: 0 0 40px -10px hsl(38 55% 62% / 0.3);
+}
+
+.glow-gold-sm {
+  box-shadow: 0 0 20px -5px hsl(38 55% 62% / 0.2);
+}
