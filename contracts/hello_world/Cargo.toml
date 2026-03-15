@@ -1,0 +1,14 @@
+[package]
+name = "stellar-fund-contract"
+version = "0.1.0"
+edition = "2021"
+
+[lib]
+crate-type = ["cdylib", "rlib"]
+
+[dependencies]
+soroban-sdk = { workspace = true }
+stellar_fund_stf_token = { package = "stellar-fund-stf-token", path = "../stf_token" }
+
+[dev-dependencies]
+soroban-sdk = { workspace = true, features = ["testutils"] }
