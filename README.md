@@ -48,7 +48,7 @@
 
 ## Overview
 
-StellarFund is a fully on-chain freelance escrow platform. A client locks XLM into a Soroban smart contract — funds only move when the client approves or cancels. No company holds your money, no fees are charged, and every action is verifiable on the Stellar blockchain.
+StellarFund is a fully on-chain freelance escrow platform. A client locks XLM into a Soroban smart contract funds only move when the client approves or cancels. No company holds your money, no fees are charged, and every action is verifiable on the Stellar blockchain.
 
 **The problem:** Freelance platforms like Upwork and Fiverr act as centralised escrow agents, charging 10–20% fees and holding full control over dispute resolution.
 
