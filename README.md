@@ -170,7 +170,7 @@ The demo covers:
 
 ### Desktop Dashboard
 
-![Desktop Dashboard](<img src=".assets/desktop.png" alt="Home Page"/>)
+![Desktop Dashboard](.assets/desktop.png)
 
 ### Mobile Responsive View
 
