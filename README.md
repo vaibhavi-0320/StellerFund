@@ -176,7 +176,7 @@ The demo covers:
 
 ![Mobile View](docs/screenshots/mobile.png)
 
-### Test Output — 9 Tests Passing
+### Test Output — 7 Tests Passing
 
 ![Test Output](docs/screenshots/tests.png)
 
