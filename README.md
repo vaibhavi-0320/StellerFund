@@ -139,7 +139,7 @@ Client cancels   →  Funds refunded to client
 - ✅ Inter-contract call pattern documented and implemented
 - ✅ Escrow ID fallback via `get_counter()` simulation
 - ✅ Friendly error messages for all three contract error codes
-- ✅ Nine-plus meaningful commits with conventional commit format
+- ✅ Six-plus meaningful commits with conventional commit format
 
 </details>
 
@@ -176,7 +176,7 @@ The demo covers:
 
 ![Mobile View](docs/screenshots/mobile.png)
 
-### Test Output — 7 Tests Passing
+### Test Output
 
 ![Test Output](docs/screenshots/tests.png)
 
