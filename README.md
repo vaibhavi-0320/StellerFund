@@ -2,7 +2,7 @@
 
 **Decentralized Freelance Escrow on the Stellar Blockchain**
 
-*Get paid without the trust tax — trustless, transparent, instant.*
+*Get paid without the trust tax trustless, transparent, instant.*
 
 <br/>
 
