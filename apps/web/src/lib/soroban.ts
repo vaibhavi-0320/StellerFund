@@ -114,6 +114,13 @@ function serializeForLog(value: unknown) {
   );
 }
 
+function isPendingTransactionStatus(status: StellarSdk.rpc.Api.GetTransactionStatus): boolean {
+  return (
+    status === StellarSdk.rpc.Api.GetTransactionStatus.NOT_FOUND ||
+    status === StellarSdk.rpc.Api.GetTransactionStatus.PENDING
+  );
+}
+
 async function invokeContract<T = undefined>(
   method: string,
   args: StellarSdk.xdr.ScVal[],
@@ -143,10 +150,21 @@ async function invokeContract<T = undefined>(
     const value = simulatedResult && parseValue ? parseValue(simulatedResult) : undefined;
     const prepared = await server.prepareTransaction(tx);
 
-    const { signedTxXdr } = await signTransaction(prepared.toXDR(), {
+    const { signedTxXdr, error: signError } = await signTransaction(prepared.toXDR(), {
       networkPassphrase: NETWORK_PASSPHRASE,
       address: publicKey,
     });
+
+    if (signError || !signedTxXdr) {
+      return {
+        success: false,
+        hash: '',
+        error: normalizeError(
+          signError || 'Transaction failed. Freighter did not return a signed transaction.',
+          method
+        ),
+      };
+    }
 
     const signedTx = StellarSdk.TransactionBuilder.fromXDR(signedTxXdr, NETWORK_PASSPHRASE);
     const sendResult = await server.sendTransaction(signedTx as StellarSdk.Transaction);
@@ -168,10 +186,7 @@ async function invokeContract<T = undefined>(
       let txResponse = await server.getTransaction(sendResult.hash);
       let waited = 0;
 
-      while (
-        txResponse.status === StellarSdk.rpc.Api.GetTransactionStatus.NOT_FOUND &&
-        waited < 30
-      ) {
+      while (isPendingTransactionStatus(txResponse.status) && waited < 30) {
         await new Promise((resolve) => setTimeout(resolve, 1000));
         txResponse = await server.getTransaction(sendResult.hash);
         waited += 1;
