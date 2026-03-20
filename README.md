@@ -1,10 +1,8 @@
-<div align="center">
-
 # ⬡ StellarFund
 
 **Decentralized Freelance Escrow on the Stellar Blockchain**
 
-*Get paid without the trust tax, trustless, transparent, instant.*
+*Get paid without the trust tax — trustless, transparent, instant.*
 
 <br/>
 
@@ -21,8 +19,8 @@
 [🔴 Live Demo](https://steller-fund.vercel.app/) &nbsp;·&nbsp;
 [📜 Contract Explorer](https://stellar.expert/explorer/testnet/contract/CCKR26GKAMQQOQAXYU6SLDAYFQ4V73NSDTXSD2BCQXP6EEMAA7URNJAS) &nbsp;·&nbsp;
 [⚙️ CI/CD Pipeline](https://github.com/vaibhavi-0320/stellarfund/actions)
-<div>
 
+</div>
 
 ---
 
@@ -48,7 +46,7 @@
 
 ## Overview
 
-StellarFund is a fully on-chain freelance escrow platform. A client locks XLM into a Soroban smart contract funds only move when the client approves or cancels. No company holds your money, no fees are charged, and every action is verifiable on the Stellar blockchain.
+StellarFund is a fully on-chain freelance escrow platform. A client locks XLM into a Soroban smart contract — funds only move when the client approves or cancels. No company holds your money, no fees are charged, and every action is verifiable on the Stellar blockchain.
 
 **The problem:** Freelance platforms like Upwork and Fiverr act as centralised escrow agents, charging 10–20% fees and holding full control over dispute resolution.
 
@@ -139,7 +137,7 @@ Client cancels   →  Funds refunded to client
 - ✅ Inter-contract call pattern documented and implemented
 - ✅ Escrow ID fallback via `get_counter()` simulation
 - ✅ Friendly error messages for all three contract error codes
-- ✅ Six-plus meaningful commits with conventional commit format
+- ✅ Nine-plus meaningful commits with conventional commit format
 
 </details>
 
@@ -162,7 +160,7 @@ The demo covers:
 
 ### 🔴 Live Application
 
-> **Deployed on Vercel:** [stellarfund.vercel.app](https://steller-fund.vercel.app/)
+> **Deployed on Vercel:** [steller-fund.vercel.app](https://steller-fund.vercel.app/)
 
 ---
 
@@ -176,7 +174,7 @@ The demo covers:
 
 ![Mobile View](docs/screenshots/mobile.png)
 
-### Test Output
+### Test Output — 9 Tests Passing
 
 ![Test Output](docs/screenshots/tests.png)
 
@@ -210,7 +208,6 @@ The demo covers:
 ```
 ┌─────────────────────────────────────────────┐
 │              User's Browser                 │
-│                                             │
 │   React 19 + TypeScript + Tailwind CSS      │
 │   Framer Motion + Vite 6                    │
 └─────────────────┬───────────────────────────┘
@@ -346,8 +343,6 @@ pub struct Escrow {
 
 ### Contract Events
 
-Every state change emits an on-chain event that can be queried from Stellar Expert or via the RPC.
-
 | Event | Emitted When | Payload |
 | :---- | :----------- | :------ |
 | `created` | `create_escrow` succeeds | `(id, amount)` |
@@ -481,7 +476,7 @@ Both jobs must pass before a pull request can be merged. The CI badge at the top
 ### Step 1 — Clone and install
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/stellarfund
+git clone https://github.com/vaibhavi-0320/stellarfund
 cd stellarfund
 npm install
 ```
@@ -495,7 +490,7 @@ Open [Stellar Friendbot](https://laboratory.stellar.org/#account-creator?network
 ```bash
 cp .env.example .env.local
 # VITE_STELLAR_CONTRACT_ID is already set to the deployed contract
-# Change it if you deploy your own
+# Change it only if you deploy your own
 ```
 
 ### Step 4 — Run the dev server
@@ -532,8 +527,8 @@ stellar contract deploy \
   --source-account deployer \
   --network testnet
 
-# Step 4 — Copy the returned C... address
-# Add it to .env.local as VITE_STELLAR_CONTRACT_ID
+# Step 4 — Copy the returned C... address into .env.local
+# VITE_STELLAR_CONTRACT_ID=CYOUR_NEW_CONTRACT_ADDRESS
 ```
 
 ### Deploy the frontend to Vercel
@@ -546,7 +541,7 @@ npm install -g vercel
 npm run build
 vercel --prod
 
-# During deployment, add this environment variable:
+# Set this environment variable in the Vercel dashboard:
 # VITE_STELLAR_CONTRACT_ID = your_contract_address_here
 ```
 
@@ -556,24 +551,22 @@ The `vercel.json` file in the repository already includes the SPA rewrite rule s
 
 ## Technical Challenges Solved
 
-Four non-obvious bugs were encountered and fixed during development.
-
 ### 1 — Escrow ID showed as "unavailable" after creation
 
 **Problem:** `@stellar/stellar-sdk` v14 `ScVal` return value decoding fails silently for some contract deployments. Both `scValToNative()` and `.u32()` return `null` without throwing.
 
-**Fix:** After the transaction confirms on-chain, call `get_counter()` via a simulation-only transaction. The counter value always equals the ID of the most recently created escrow, and simulation requires no signing.
+**Fix:** After the transaction confirms on-chain, call `get_counter()` via a simulation-only transaction. The counter always equals the ID of the most recently created escrow.
 
 ```typescript
 let escrowId = safeU32(returnValue);
 if (escrowId === null) {
-  escrowId = await fetchCounter(); // read chain state as fallback
+  escrowId = await fetchCounter();
 }
 ```
 
 ### 2 — Freighter signing returned an object instead of a string
 
-**Problem:** `@stellar/freighter-api` v6 changed `signTransaction()` to return `{ signedTxXdr: string }` instead of a plain string. Passing the raw object into `TransactionBuilder.fromXDR()` corrupted the XDR union discriminant, producing the error "Bad union switch: 4".
+**Problem:** `@stellar/freighter-api` v6 changed `signTransaction()` to return `{ signedTxXdr: string }` instead of a plain string. Passing the raw object into `TransactionBuilder.fromXDR()` produced the error "Bad union switch: 4".
 
 **Fix:**
 
@@ -586,15 +579,15 @@ const signedXdr =
 
 ### 3 — XDR crash when user pasted a transaction hash as escrow ID
 
-**Problem:** `parseInt("a83875...")` returns `NaN`. Passing `NaN` into `nativeToScVal(NaN, { type: 'u32' })` throws during XDR serialisation, crashing before the RPC call.
+**Problem:** `parseInt("a83875...")` returns `NaN`. Passing `NaN` into `nativeToScVal(NaN, { type: 'u32' })` throws during XDR serialisation before the RPC call is made.
 
-**Fix:** `parseEscrowId()` validates the input and returns a specific error message for wallet addresses, transaction hashes, and non-integer values — all before any XDR is built.
+**Fix:** `parseEscrowId()` detects wallet addresses, transaction hashes, and non-integers and returns a specific error message for each case — all before any XDR is built.
 
-### 4 — "Error(Contract, #2) UnauthorizedClient" on release or refund
+### 4 — "Error(Contract, #2) UnauthorizedClient" confused users
 
-**Problem:** `require_auth(client)` in Rust correctly enforces that only the wallet that called `create_escrow` can later call `release` or `refund`. The frontend showed a raw contract error string that confused users.
+**Problem:** `require_auth(client)` in Rust enforces that only the wallet that created the escrow can release or refund it. The raw error string was shown directly to the user.
 
-**Fix:** Error code `#2` is now caught and translated to plain English. The connected wallet address is also displayed as **CLIENT (YOU)** during escrow creation so users understand the constraint before they create the escrow.
+**Fix:** Error code `#2` is caught and translated to plain English. The connected wallet is shown as **CLIENT (YOU)** during creation so the constraint is clear upfront.
 
 ---
 
@@ -618,7 +611,7 @@ feat: GitHub Actions CI/CD — frontend build and contract tests on every push t
 
 | Resource | Link |
 | :------- | :--- |
-| Live Demo | [stellarfund.vercel.app](https://stellarfund.vercel.app) |
+| Live Demo | [steller-fund.vercel.app](https://steller-fund.vercel.app/) |
 | Demo Video | [loom.com/share/d2e7203f...](https://www.loom.com/share/d2e7203f65a243299b0634f6e6d558ec) |
 | Contract on Stellar Expert | [View on Stellar Expert](https://stellar.expert/explorer/testnet/contract/CCKR26GKAMQQOQAXYU6SLDAYFQ4V73NSDTXSD2BCQXP6EEMAA7URNJAS) |
 | Free Testnet XLM | [Stellar Friendbot](https://laboratory.stellar.org/#account-creator?network=test) |
