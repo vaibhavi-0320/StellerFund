@@ -5,6 +5,7 @@
 **Decentralized Freelance Escrow on the Stellar Blockchain**
 
 *Get paid without the trust tax, trustless, transparent, instant.*
+
 <br/>
 
 [![CI](https://github.com/vaibhavi-0320/stellarfund/actions/workflows/ci.yml/badge.svg)](https://github.com/vaibhavi-0320/stellarfund/actions/workflows/ci.yml)
@@ -13,12 +14,15 @@
 [![React](https://img.shields.io/badge/React-19.0-61DAFB?style=flat-square&logo=react&logoColor=black)](https://react.dev)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.8-3178C6?style=flat-square&logo=typescript&logoColor=white)](https://typescriptlang.org)
 [![Rust](https://img.shields.io/badge/Rust-Contract-CE422B?style=flat-square&logo=rust&logoColor=white)](https://rust-lang.org)
+
 <br/>
+
 [🎬 Watch Demo Video](https://www.loom.com/share/d2e7203f65a243299b0634f6e6d558ec) &nbsp;·&nbsp;
 [🔴 Live Demo](https://steller-fund.vercel.app/) &nbsp;·&nbsp;
 [📜 Contract Explorer](https://stellar.expert/explorer/testnet/contract/CCKR26GKAMQQOQAXYU6SLDAYFQ4V73NSDTXSD2BCQXP6EEMAA7URNJAS) &nbsp;·&nbsp;
 [⚙️ CI/CD Pipeline](https://github.com/vaibhavi-0320/stellarfund/actions)
 <div>
+
 
 ---
 
