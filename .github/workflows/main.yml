@@ -12,6 +12,7 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
+      # ---------- FRONTEND ----------
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
@@ -23,8 +24,11 @@ jobs:
       - name: Build frontend
         run: npm run build
 
-      - name: Setup Rust
+      # ---------- RUST CONTRACT ----------
+      - name: Install Rust
         uses: dtolnay/rust-toolchain@stable
+        with:
+          targets: wasm32-unknown-unknown
 
       - name: Run contract tests
         run: cargo test
