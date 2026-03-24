@@ -5,14 +5,15 @@ on:
   pull_request:
 
 jobs:
-  build-and-test:
+  build:
     runs-on: ubuntu-latest
 
     steps:
+      # 1. Checkout
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      # ---------- FRONTEND ----------
+      # ---------------- FRONTEND ----------------
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
@@ -24,11 +25,12 @@ jobs:
       - name: Build frontend
         run: npm run build
 
-      # ---------- RUST CONTRACT ----------
-      - name: Install Rust
+      # ---------------- RUST (SOROBAN CONTRACT) ----------------
+      - name: Setup Rust
         uses: dtolnay/rust-toolchain@stable
         with:
           targets: wasm32-unknown-unknown
 
       - name: Run contract tests
+        working-directory: contracts/stellar_fund
         run: cargo test
