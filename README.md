@@ -13,7 +13,6 @@
 
 <br/>
 
-[![CI](![CI](https://github.com/vaibhavi-0320/StellerFund/.github/workflows/main.yml/badge.svg))](https://github.com/vaibhavi-0320/stellarfund/actions/workflows/ci.yml)
 [![Stellar](https://img.shields.io/badge/Stellar-Testnet-7D00FF?style=flat-square&logo=stellar&logoColor=white)](https://stellar.org)
 [![Soroban](https://img.shields.io/badge/Soroban_SDK-21.7.7-00D1FF?style=flat-square)](https://soroban.stellar.org)
 [![React](https://img.shields.io/badge/React-19-61DAFB?style=flat-square&logo=react&logoColor=black)](https://react.dev)
@@ -155,7 +154,7 @@ The demo shows every part of the working application:
 
 ### How It Works — 3 Simple Steps
 
-<img src="assets/SS_2_How_it_works-_3_simple_steps.png" alt="How StellarFund Works" width="100%"/>
+<img src="Screenshots/SS 2 How it works- 3 simple steps.png" alt="How StellarFund Works" width="100%"/>
 
 > *Three cards explain the entire product: lock funds, deliver work, one-click settlement.*
 
@@ -163,7 +162,7 @@ The demo shows every part of the working application:
 
 ### Wallet Connected — Create Escrow
 
-<img src="assets/SS_3_Wallet_connection.png" alt="Wallet connected with 19,100 XLM balance" width="100%"/>
+<img src="Screenshots/SS 3 Wallet connection.png" width="100%"/>
 
 > *Wallet balance shows 19,100.92 XLM. Create Escrow form with freelancer address, amount, and memo field.*
 
@@ -171,7 +170,7 @@ The demo shows every part of the working application:
 
 ### Smart Contract Live on Stellar Expert
 
-<img src="assets/SS_4_Smart_Contract_on_Stellar_Expert.png" alt="Contract on Stellar Expert with 300 XLM locked" width="100%"/>
+<img src="Screenshots/SS 4 Smart Contract on Stellar Expert.png" alt="Contract on Stellar Expert with 300 XLM locked" width="100%"/>
 
 > *Contract `CBB3...JPT7` live on Stellar Testnet. 300 XLM locked in contract state. 11 storage entries.*
 
@@ -179,7 +178,7 @@ The demo shows every part of the working application:
 
 ### Escrow #9 Created — Active with Release and Refund
 
-<img src="assets/SS_5_Escrow_ID_creation.png" alt="Escrow 9 created for Marketing project, 200 XLM" width="100%"/>
+<img src="Screenshots/SS 5 Escrow ID creation.png" alt="Escrow 9 created for Marketing project, 200 XLM" width="100%"/>
 
 > *Escrow #9 created on-chain for a "Marketing" project. 200 XLM locked. Full release and refund controls visible.*
 
