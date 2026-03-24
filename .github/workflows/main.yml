@@ -7,47 +7,48 @@ on:
     branches: [ main ]
 
 jobs:
-  # --- CI Stage: Frontend ---
   frontend:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
         with:
           node-version: 22
-          cache: 'npm'
-      - run: npm ci
-      - run: npm run build
+          # We removed 'cache: npm' to prevent the lockfile error 
+          # until you have a package-lock.json committed.
 
-  # --- CI Stage: Stellar Contract ---
+      - name: Install dependencies
+        # If your frontend is in a folder like 'client', change this to 'cd client && npm install'
+        run: npm install 
+
+      - name: Build frontend
+        run: npm run build
+
   contract:
     runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: contracts/stellar_fund
     steps:
-      - uses: actions/checkout@v4
-      - uses: dtolnay/rust-toolchain@stable
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Rust
+        uses: dtolnay/rust-toolchain@stable
         with:
           targets: wasm32-unknown-unknown
-      
-      # Cache Rust dependencies to make builds 2-3x faster
-      - uses: Swatinem/rust-cache@v2
-        with:
-          workspaces: "contracts/stellar_fund -> target"
 
       - name: Run contract tests
-        run: cargo test
-      
-      - name: Build contract to WASM
-        run: cargo build --target wasm32-unknown-unknown --release
+        # We use the --manifest-path to avoid "directory not found" errors
+        run: cargo test --manifest-path contracts/stellar_fund/Cargo.toml
 
-  # --- CD Stage: Deployment ---
+      - name: Build contract to WASM
+        run: cargo build --manifest-path contracts/stellar_fund/Cargo.toml --target wasm32-unknown-unknown --release
+
   deploy:
-    needs: [frontend, contract] # Only runs if both CI jobs pass
-    if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+    needs: [frontend, contract]
+    if: github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
     steps:
-      - name: Deploying to Production
-        run: echo "Triggering deployment scripts..."
-      # Add your specific deployment actions here (e.g., Stellar CLI or Vercel)
+      - name: Deploy Step
+        run: echo "CI passed! Deploying..."
