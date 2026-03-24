@@ -26,7 +26,7 @@
 [🎬 **Watch Demo**](https://www.loom.com/share/15ca447c73c246ccafb7e6cb7cf675a9) &nbsp;&nbsp;|&nbsp;&nbsp;
 [🔴 **Live App**](https://steller-fund.vercel.app/) &nbsp;&nbsp;|&nbsp;&nbsp;
 [📜 **Contract on Stellar Expert**](https://stellar.expert/explorer/testnet/contract/CBB3RJXMYQNHXQTRRZULUJMARRNZJHM4XUQN37LBG54ABYS7TE2EJPT7) &nbsp;&nbsp;|&nbsp;&nbsp;
-[⚙️ **CI/CD**](https://github.com/vaibhavi-0320/stellarfund/actions)
+[⚙️ **CI/CD**](https://github.com/vaibhavi-0320/stellarfund/.github/workflows/main.yml)
 
 <br/>
 
