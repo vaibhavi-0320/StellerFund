@@ -183,6 +183,8 @@ The demo shows every part of the working application:
 > *Escrow #9 created on-chain for a "Marketing" project. 200 XLM locked. Full release and refund controls visible.*
 
 ---
+### Mobile View 
+<img src="assets/mobile.png.jpeg" alt="Deployable on Mobile Phones"/>
 
 ## ✨ Features at a Glance
 
