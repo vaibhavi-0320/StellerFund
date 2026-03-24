@@ -9,7 +9,7 @@
 # The escrow is the code. The code is the law.
 
 *StellarFund locks XLM in a Soroban smart contract on the Stellar blockchain.*
-*Funds release only when work is approved. No company in the middle. No fees. No trust required.*
+*Funds are released only when work is approved. No company in the middle. No fees. No trust required.*
 
 <br/>
 
@@ -24,7 +24,7 @@
 
 <br/>
 
-[🎬 **Watch Demo**](https://www.loom.com/share/d2e7203f65a243299b0634f6e6d558ec) &nbsp;&nbsp;|&nbsp;&nbsp;
+[🎬 **Watch Demo**](https://www.loom.com/share/15ca447c73c246ccafb7e6cb7cf675a9) &nbsp;&nbsp;|&nbsp;&nbsp;
 [🔴 **Live App**](https://steller-fund.vercel.app/) &nbsp;&nbsp;|&nbsp;&nbsp;
 [📜 **Contract on Stellar Expert**](https://stellar.expert/explorer/testnet/contract/CBB3RJXMYQNHXQTRRZULUJMARRNZJHM4XUQN37LBG54ABYS7TE2EJPT7) &nbsp;&nbsp;|&nbsp;&nbsp;
 [⚙️ **CI/CD**](https://github.com/vaibhavi-0320/stellarfund/actions)
@@ -128,7 +128,7 @@ You lock XLM  →  Code holds it  →  You approve  →  Freelancer gets paid in
 
 <div align="center">
 
-**[▶ Watch the 1-minute full walkthrough on Loom](https://www.loom.com/share/d2e7203f65a243299b0634f6e6d558ec)**
+**[▶ Watch the 4-minute full walkthrough on Loom](https://www.loom.com/share/d2e7203f65a243299b0634f6e6d558ec)**
 
 </div>
 
