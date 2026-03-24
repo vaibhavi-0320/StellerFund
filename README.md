@@ -147,7 +147,7 @@ The demo shows every part of the working application:
 
 ### Landing Page
 
-<img src="assets/SS_1_Home_page.png" alt="StellarFund Home Page" width="100%"/>
+<img src="Screenshots/SS 1 Home page.png" alt="StellarFund Home Page" width="100%"/>
 
 > *Animated starfield, orbital rings, and the tagline that says it all — "Get paid without the trust tax."*
 
