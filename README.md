@@ -128,7 +128,7 @@ You lock XLM  →  Code holds it  →  You approve  →  Freelancer gets paid in
 
 <div align="center">
 
-**[▶ Watch the 4-minute full walkthrough on Loom](https://www.loom.com/share/d2e7203f65a243299b0634f6e6d558ec)**
+**[▶ Watch the 4-minute full (Longer Version) walkthrough on Loom](https://www.loom.com/share/d2e7203f65a243299b0634f6e6d558ec)**
 
 </div>
 
