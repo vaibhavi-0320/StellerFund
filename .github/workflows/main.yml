@@ -2,11 +2,9 @@ name: CI/CD
 
 on:
   push:
-    branches:
-      - main
+    branches: [main]
   pull_request:
-    branches:
-      - main
+    branches: [main]
   workflow_dispatch:
 
 concurrency:
@@ -22,27 +20,37 @@ jobs:
         working-directory: apps/web
 
     steps:
-      - name: Check out repository
+      - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Set up Node.js
+      - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: 20
 
-      - name: Install web dependencies
-        run: npm install
+      - name: Clean install state
+        run: |
+          rm -rf node_modules
+          rm -f package-lock.json
 
-      - name: Lint web app
+      - name: Install frontend dependencies
+        run: npm install --include=optional
+
+      - name: Verify Rollup native package
+        run: npm ls rollup
+
+      - name: Lint frontend
         run: npm run lint
 
-      - name: Run web tests
+      - name: Run frontend tests
+        env:
+          CI: true
         run: npm run test
 
-      - name: Build web app
+      - name: Build frontend
         run: npm run build
 
-      - name: Upload web build artifact
+      - name: Upload frontend artifact
         uses: actions/upload-artifact@v4
         with:
           name: web-dist
@@ -54,24 +62,24 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Check out repository
+      - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Install Rust toolchain
+      - name: Setup Rust
         uses: dtolnay/rust-toolchain@stable
         with:
           targets: wasm32-unknown-unknown
 
-      - name: Cache cargo registry
+      - name: Cache Rust dependencies
         uses: Swatinem/rust-cache@v2
 
       - name: Run contract tests
         run: cargo test --workspace
 
-      - name: Build escrow contract WASM
+      - name: Build escrow contract
         run: cargo build -p stellar-fund-contract --target wasm32-unknown-unknown --release
 
-      - name: Build STF token contract WASM
+      - name: Build STF token contract
         run: cargo build -p stellar-fund-stf-token --target wasm32-unknown-unknown --release
 
       - name: Upload contract artifacts
@@ -83,9 +91,7 @@ jobs:
 
   deploy:
     name: Deploy
-    needs:
-      - frontend
-      - contracts
+    needs: [frontend, contracts]
     if: github.event_name == 'push' && github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
     env:
@@ -94,7 +100,7 @@ jobs:
       VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
 
     steps:
-      - name: Check out repository
+      - name: Checkout repository
         uses: actions/checkout@v4
 
       - name: Detect Vercel configuration
@@ -107,7 +113,7 @@ jobs:
             echo "configured=false" >> "$GITHUB_OUTPUT"
           fi
 
-      - name: Set up Node.js
+      - name: Setup Node.js
         if: steps.vercel-config.outputs.configured == 'true'
         uses: actions/setup-node@v4
         with:
@@ -121,7 +127,7 @@ jobs:
         if: steps.vercel-config.outputs.configured == 'true'
         run: vercel pull --yes --environment=production --token="$VERCEL_TOKEN"
 
-      - name: Build deployment bundle
+      - name: Build deploy output
         if: steps.vercel-config.outputs.configured == 'true'
         run: vercel build --prod --token="$VERCEL_TOKEN"
 
