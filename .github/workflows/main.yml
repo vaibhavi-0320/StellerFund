@@ -2,53 +2,134 @@ name: CI/CD
 
 on:
   push:
-    branches: [ main ]
+    branches:
+      - main
   pull_request:
-    branches: [ main ]
+    branches:
+      - main
+  workflow_dispatch:
+
+concurrency:
+  group: ci-cd-${{ github.ref }}
+  cancel-in-progress: true
 
 jobs:
   frontend:
+    name: Frontend
     runs-on: ubuntu-latest
+
     steps:
-      - name: Checkout repository
+      - name: Check out repository
         uses: actions/checkout@v4
 
-      - name: Setup Node.js
+      - name: Set up Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: 22
-          # We removed 'cache: npm' to prevent the lockfile error 
-          # until you have a package-lock.json committed.
+          node-version: 20
+          cache: npm
+          cache-dependency-path: apps/web/package-lock.json
 
-      - name: Install dependencies
-        # If your frontend is in a folder like 'client', change this to 'cd client && npm install'
-        run: npm install 
+      - name: Install web dependencies
+        run: npm --prefix apps/web ci
 
-      - name: Build frontend
-        run: npm run build
+      - name: Lint web app
+        run: npm --prefix apps/web run lint
 
-  contract:
+      - name: Run web tests
+        run: npm --prefix apps/web run test
+
+      - name: Build web app
+        run: npm --prefix apps/web run build
+
+      - name: Upload web build artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: web-dist
+          path: apps/web/dist
+          if-no-files-found: error
+
+  contracts:
+    name: Contracts
     runs-on: ubuntu-latest
+
     steps:
-      - name: Checkout repository
+      - name: Check out repository
         uses: actions/checkout@v4
 
-      - name: Setup Rust
+      - name: Install Rust toolchain
         uses: dtolnay/rust-toolchain@stable
         with:
           targets: wasm32-unknown-unknown
 
-      - name: Run contract tests
-        # We use the --manifest-path to avoid "directory not found" errors
-        run: cargo test --manifest-path contracts/stellar_fund/Cargo.toml
+      - name: Cache cargo registry
+        uses: Swatinem/rust-cache@v2
 
-      - name: Build contract to WASM
-        run: cargo build --manifest-path contracts/stellar_fund/Cargo.toml --target wasm32-unknown-unknown --release
+      - name: Run contract tests
+        run: cargo test --workspace
+
+      - name: Build hello world contract WASM
+        run: cargo build -p stellar-fund-contract --target wasm32-unknown-unknown --release
+
+      - name: Build STF token contract WASM
+        run: cargo build -p stellar-fund-stf-token --target wasm32-unknown-unknown --release
+
+      - name: Upload contract artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: contract-wasm
+          path: target/wasm32-unknown-unknown/release/*.wasm
+          if-no-files-found: error
 
   deploy:
-    needs: [frontend, contract]
-    if: github.ref == 'refs/heads/main'
+    name: Deploy
+    needs:
+      - frontend
+      - contracts
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
+    env:
+      VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
+      VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
+      VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
+
     steps:
-      - name: Deploy Step
-        run: echo "CI passed! Deploying..."
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Detect Vercel configuration
+        id: vercel-config
+        shell: bash
+        run: |
+          if [[ -n "$VERCEL_TOKEN" && -n "$VERCEL_ORG_ID" && -n "$VERCEL_PROJECT_ID" ]]; then
+            echo "configured=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "configured=false" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Set up Node.js
+        if: steps.vercel-config.outputs.configured == 'true'
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+          cache-dependency-path: apps/web/package-lock.json
+
+      - name: Install Vercel CLI
+        if: steps.vercel-config.outputs.configured == 'true'
+        run: npm install --global vercel
+
+      - name: Pull Vercel environment
+        if: steps.vercel-config.outputs.configured == 'true'
+        run: vercel pull --yes --environment=production --token="$VERCEL_TOKEN"
+
+      - name: Build deployment bundle
+        if: steps.vercel-config.outputs.configured == 'true'
+        run: vercel build --prod --token="$VERCEL_TOKEN"
+
+      - name: Deploy to Vercel
+        if: steps.vercel-config.outputs.configured == 'true'
+        run: vercel deploy --prebuilt --prod --token="$VERCEL_TOKEN"
+
+      - name: Skip deploy when secrets are missing
+        if: steps.vercel-config.outputs.configured != 'true'
+        run: echo "Skipping Vercel deploy because VERCEL_TOKEN, VERCEL_ORG_ID, or VERCEL_PROJECT_ID is not configured."
