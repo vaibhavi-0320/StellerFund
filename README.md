@@ -3,9 +3,8 @@
 <br/>
 
 <img src="Screenshots/Banner- StellarFund.png" alt="StellarFund — Get paid without the trust tax" width="100%"/>
-
 <br/><br/>
-# The escrow is the code. The code is the law.
+
 *StellarFund locks XLM in a Soroban smart contract on the Stellar blockchain.*
 *Funds are released only when work is approved. No company in the middle. No fees. No trust required.*
 
