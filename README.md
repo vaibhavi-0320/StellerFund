@@ -575,7 +575,7 @@ feat: GitHub Actions CI/CD — frontend and contract on every push to main
 
 <br/>
 
-*Built for the Stellar Journey to Mastery program — Orange Belt + Green Belt*
+*Built for the Stellar Journey to Mastery program, Orange Belt + Green Belt*
 
 [![Stellar](https://img.shields.io/badge/Built_on-Stellar-7D00FF?style=for-the-badge&logo=stellar&logoColor=white)](https://stellar.org)
 
