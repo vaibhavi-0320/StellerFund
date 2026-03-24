@@ -2,12 +2,10 @@
 
 <br/>
 
-<img src="assets/SS_1_Home_page.png" alt="StellarFund — Get paid without the trust tax" width="100%"/>
+<img src="Screenshots/Banner- StellarFund.png" alt="StellarFund — Get paid without the trust tax" width="100%"/>
 
 <br/><br/>
-
 # The escrow is the code. The code is the law.
-
 *StellarFund locks XLM in a Soroban smart contract on the Stellar blockchain.*
 *Funds are released only when work is approved. No company in the middle. No fees. No trust required.*
 
@@ -390,12 +388,6 @@ All smart contract functionalities have been thoroughly tested and validated.
 - ✔️ Validate invalid escrow amounts
 - ✔️ Authorization checks (only the original client can act)
 - ✔️ Event emission on release/refund
-
-### 📸 Test Execution Proof
-
-Below is the actual test output from the smart contract:
-
-![Test Results](./Screenshots/test-results.png)
 
 ## CI/CD Pipeline
 
