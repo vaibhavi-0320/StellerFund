@@ -73,7 +73,7 @@ You lock XLM  →  Code holds it  →  You approve  →  Freelancer gets paid in
 - ✅ Connect Freighter wallet — freighter-api v6 compatible, handles both response shapes
 - ✅ Live XLM balance display with 30-second cache to avoid hammering the RPC
 - ✅ Send XLM transactions signed locally — private key never leaves the device
-- ✅ Every transaction shows hash with a direct link to Stellar Expert
+- ✅ Every transaction shows a hash with a direct link to Stellar Expert
 - ✅ Full error handling — Freighter not installed, wallet locked, signing cancelled
 
 </details>
@@ -84,7 +84,7 @@ You lock XLM  →  Code holds it  →  You approve  →  Freelancer gets paid in
 <br/>
 
 - ✅ Soroban escrow contract written in Rust, deployed to Stellar Testnet
-- ✅ Three custom error codes: `EscrowNotFound` `UnauthorizedClient` `AlreadyCompleted`
+- ✅ Three custom error codes: `EscrowNotFound` `UnauthorizedClient` `AlreadyCompleted.`
 - ✅ Frontend calls all five contract functions with proper XDR serialisation
 - ✅ Transaction polling waits up to 30 seconds for on-chain confirmation
 - ✅ TypeScript strict mode throughout — zero `any` types
